@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight Travails</title>
+    <link rel="stylesheet" href="styles.css" >
+</head>
+<body>
+    <div class="chessboardmover">
+        <div class="chessboardoutside">
+            <div class="label empty"></div>
+            ${[...'ABCDEFGH'].map(letter => `<div class="label top">${letter}</div>`).join('')}
+            ${[...Array(8).keys()].map(row => `
+              <div class="label side">${8 - row}</div>
+              ${[...Array(8).keys()].map(col => `
+                <div class="cell ${(row + col) % 2 === 0 ? 'white' : 'black'}" data-coord="${row},${col}"></div>
+              `).join('')}
+            `).join('')}
+            <div class="board" id="board"></div>
+        </div>
+    </div>
+</body>
+
+<script src="knight.js"></script>
+</html>
