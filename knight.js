@@ -41,4 +41,61 @@ const boardSize = 8;
       board.appendChild(cell);
     }
   }
+
+  let startCoord = null;
+let endCoord = null;
+
+board.addEventListener('click', (e) => {
+  const cell = e.target;
+  const coord = cell.getAttribute('data-coord');
+  if (!startCoord) {
+    startCoord = coord;
+    cell.classList.add('start');
+  } else if (!endCoord) {
+    endCoord = coord;
+    cell.classList.add('end');
+
+    const path = findShortestPath(startCoord, endCoord, knightGraph);
+    if (path) {
+      highlightPath(path);
+    }
+    startCoord = null;
+    endCoord = null;
+  }
+});
+  
+  function findShortestPath(start, end, graph) {
+    const queue = [[start]];
+    const visited = new Set();
+    visited.add(start);
+  
+    while (queue.length > 0) {
+      const path = queue.shift();
+      const current = path[path.length - 1];
+  
+      if (current === end) {
+        return path;
+      }
+  
+      for (const neighbor of graph[current]) {
+        if (!visited.has(neighbor)) {
+          visited.add(neighbor);
+          queue.push([...path, neighbor]);
+        }
+      }
+    }
+    return null; 
+  }
+
+  function highlightPath(path) {
+    path.forEach((coord, index) => {
+      const cell = document.querySelector(`[data-coord='${coord}']`);
+      if (cell) {
+        setTimeout(() => {
+          cell.classList.add('path');
+          cell.textContent = index;
+        }, index * 300); // Animation delay
+      }
+    });
+  }
   
