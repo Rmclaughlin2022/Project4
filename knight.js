@@ -28,7 +28,6 @@ const buildKnightGraph = () => {
 };
 
 const knightGraph = buildKnightGraph();
-console.log(knightGraph);
 
 const board = document.getElementById('board');
 
@@ -140,8 +139,27 @@ function placeHorse(coord) {
 
 function coordToChessNotation(coord) {
   const [row, col] = coord.split(',').map(Number);
-  const file = String.fromCharCode('a'.charCodeAt(0) + col); // 'a' to 'h'
-  const rank = 7 - row + 1; // Convert from 0-7 to 8-1
+  const file = String.fromCharCode('a'.charCodeAt(0) + col); 
+  const rank = 7 - row + 1; 
   return `${file}${rank}`;
 }
+
+function resetBoard() {
+  const cells = document.querySelectorAll('.cell');
+  cells.forEach(cell => {
+    cell.classList.remove('start', 'end', 'path');
+    cell.textContent = '';
+    const horse = cell.querySelector('.horse-icon');
+    if (horse) {
+      horse.remove();
+    }
+  });
+
+  document.getElementById('move-list').innerHTML = '';
+  startCoord = null;
+  endCoord = null;
+}
 placeHorse("4,3");
+
+const restartButton = document.getElementById('restart-button');
+restartButton.addEventListener('click', resetBoard);

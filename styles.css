@@ -119,3 +119,10 @@ h1{
   display: center;
   margin-left: 10px;
 }
+
+#restart-button {
+  font-size: 16px;
+  cursor: pointer;
+  color: red;
+  font-family: 'MedievalSharp', cursive;
+}
