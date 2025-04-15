@@ -29,25 +29,28 @@ body, html {
 }
 
 .chessboardmover {
-    display: grid;
-    place-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
 }
 
 .chessboardoutside {
     display: grid;
     grid-template-columns: 25px repeat(8, 50px);
     grid-template-rows: 25px repeat(8, 50px);
+    gap: 0;
 }
 .label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
+  display: grid;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 14px;
   }
   
-  .label.top {
-    grid-row: 1;
+  .label.bot {
+    grid-row: 10;
   }
   
   .label.side {
