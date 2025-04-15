@@ -1,48 +1,48 @@
 const boardSize = 8;
 
-  const knightMoves = [
-    [2, 1], [1, 2], [-1, 2], [-2, 1],
-    [-2, -1], [-1, -2], [1, -2], [2, -1],
-  ];
+const knightMoves = [
+  [2, 1], [1, 2], [-1, 2], [-2, 1],
+  [-2, -1], [-1, -2], [1, -2], [2, -1],
+];
 
-  const buildKnightGraph = () => {
-    const graph = {};
-
-    for (let row = 0; row < boardSize; row++) {
-      for (let col = 0; col < boardSize; col++) {
-        const node = `${row},${col}`;
-        graph[node] = [];
-
-        knightMoves.forEach(([dx, dy]) => {
-          const newRow = row + dx;
-          const newCol = col + dy;
-
-          if (newRow >= 0 && newRow < boardSize && newCol >= 0 && newCol < boardSize) {
-            graph[node].push(`${newRow},${newCol}`);
-          }
-        });
-      }
-    }
-
-    return graph;
-  };
-
-  const knightGraph = buildKnightGraph();
-  console.log(knightGraph); 
-  
-  const board = document.getElementById('board');
+const buildKnightGraph = () => {
+  const graph = {};
 
   for (let row = 0; row < boardSize; row++) {
     for (let col = 0; col < boardSize; col++) {
-      const cell = document.createElement('div');
-      cell.classList.add('cell');
-      cell.classList.add((row + col) % 2 === 0 ? 'white' : 'black');
-      cell.setAttribute('data-coord', `${row},${col}`);
-      board.appendChild(cell);
+      const node = `${row},${col}`;
+      graph[node] = [];
+
+      knightMoves.forEach(([dx, dy]) => {
+        const newRow = row + dx;
+        const newCol = col + dy;
+
+        if (newRow >= 0 && newRow < boardSize && newCol >= 0 && newCol < boardSize) {
+          graph[node].push(`${newRow},${newCol}`);
+        }
+      });
     }
   }
 
-  let startCoord = null;
+  return graph;
+};
+
+const knightGraph = buildKnightGraph();
+console.log(knightGraph);
+
+const board = document.getElementById('board');
+
+for (let row = 0; row < boardSize; row++) {
+  for (let col = 0; col < boardSize; col++) {
+    const cell = document.createElement('div');
+    cell.classList.add('cell');
+    cell.classList.add((row + col) % 2 === 0 ? 'white' : 'black');
+    cell.setAttribute('data-coord', `${row},${col}`);
+    board.appendChild(cell);
+  }
+}
+
+let startCoord = null;
 let endCoord = null;
 
 board.addEventListener('click', (e) => {
@@ -63,39 +63,50 @@ board.addEventListener('click', (e) => {
     endCoord = null;
   }
 });
-  
-  function findShortestPath(start, end, graph) {
-    const queue = [[start]];
-    const visited = new Set();
-    visited.add(start);
-  
-    while (queue.length > 0) {
-      const path = queue.shift();
-      const current = path[path.length - 1];
-  
-      if (current === end) {
-        return path;
-      }
-  
-      for (const neighbor of graph[current]) {
-        if (!visited.has(neighbor)) {
-          visited.add(neighbor);
-          queue.push([...path, neighbor]);
-        }
+
+function findShortestPath(start, end, graph) {
+  const queue = [[start]];
+  const visited = new Set();
+  visited.add(start);
+
+  while (queue.length > 0) {
+    const path = queue.shift();
+    const current = path[path.length - 1];
+
+    if (current === end) {
+      return path;
+    }
+
+    for (const neighbor of graph[current]) {
+      if (!visited.has(neighbor)) {
+        visited.add(neighbor);
+        queue.push([...path, neighbor]);
       }
     }
-    return null; 
   }
+  return null;
+}
 
-  function highlightPath(path) {
-    path.forEach((coord, index) => {
-      const cell = document.querySelector(`[data-coord='${coord}']`);
-      if (cell) {
-        setTimeout(() => {
-          cell.classList.add('path');
-          cell.textContent = index;
-        }, index * 300); // Animation delay
-      }
-    });
+function highlightPath(path) {
+  path.forEach((coord, index) => {
+    const cell = document.querySelector(`[data-coord='${coord}']`);
+    if (cell) {
+      setTimeout(() => {
+        cell.classList.add('path');
+        cell.textContent = index;
+      }, index * 300);
+    }
+  });
+}
+
+function placeHorse(coord){
+  const cell = document.querySelector(`[data-coord='${coord}']`);
+  if (cell) {
+    const horseImg = document.createElement('img');
+    horseImg.src = '/images/horse.png';
+    horseImg.classList.add('horse-icon');
+    
+    cell.appendChild(horseImg);
   }
-  
+}
+placeHorse("4,3");
