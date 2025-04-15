@@ -9,6 +9,12 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  color: rgb(255, 255, 255);
+  text-align: center;
+  
 }
 .board {
   display: grid;
@@ -40,8 +46,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-
+  height: 50vh;
 }
 
 .chessboardoutside {
@@ -69,10 +74,13 @@ body {
 .label.empty {
   grid-row: 1;
   grid-column: 1;
+  background-color: white;
+  height: 20px;
 }
 
 .cell.start {
   background-color: green !important;
+
 }
 
 .cell.end {
@@ -83,4 +91,20 @@ body {
   background-color: yellow !important;
   color: black;
   font-weight: bold;
+}
+h1{
+  font-size: 75px;
+}
+.horse-icon {
+  width: 35px;
+  height: 35px;
+  pointer-events: none;
+}
+
+.side-label {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: px; /* adjust as needed */
+  font-size: 16px;     /* optional: match font size with bot-label */
 }
