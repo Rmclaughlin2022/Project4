@@ -14,6 +14,7 @@ body {
 
   color: rgb(255, 255, 255);
   text-align: center;
+  font-family: 'MedievalSharp', cursive;
   
 }
 .board {
@@ -46,6 +47,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 50vh;
 }
 
@@ -74,21 +76,20 @@ body {
 .label.empty {
   grid-row: 1;
   grid-column: 1;
-  background-color: white;
   height: 20px;
 }
 
 .cell.start {
-  background-color: green !important;
+  background-color: green;
 
 }
 
 .cell.end {
-  background-color: red !important;
+  background-color: red;
 }
 
 .cell.path {
-  background-color: yellow !important;
+  background-color: yellow;
   color: black;
   font-weight: bold;
 }
@@ -105,6 +106,16 @@ h1{
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: px; /* adjust as needed */
-  font-size: 16px;     /* optional: match font size with bot-label */
+  font-size: 16px;     
+}
+.move-list {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+  padding: 10px;
+  width: 300px;
+  height: 100px;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 16px;
+  display: center;
+  margin-left: 10px;
 }

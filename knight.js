@@ -88,25 +88,60 @@ function findShortestPath(start, end, graph) {
 }
 
 function highlightPath(path) {
+
+  const existingHorse = document.querySelector('.horse-icon');
+  if (existingHorse) {
+    existingHorse.remove();
+  }
+
+  const moveList = document.getElementById('move-list');
+  moveList.innerHTML = ' '; 
+
+  let currentHorse = null;
+
   path.forEach((coord, index) => {
-    const cell = document.querySelector(`[data-coord='${coord}']`);
-    if (cell) {
-      setTimeout(() => {
+    setTimeout(() => {
+
+      const cell = document.querySelector(`[data-coord='${coord}']`);
+      if (cell) {
         cell.classList.add('path');
         cell.textContent = index;
-      }, index * 300);
-    }
+      }
+
+  
+      if (currentHorse) {
+        currentHorse.remove();
+      }
+      currentHorse = placeHorse(coord);
+
+      const moveItem = document.createElement('span');
+      moveItem.textContent = coordToChessNotation(coord);
+      
+      if (index !== 0) {
+        moveList.append(', ');
+      }
+      
+      moveList.appendChild(moveItem);
+    }, index * 500);
   });
 }
 
-function placeHorse(coord){
+function placeHorse(coord) {
   const cell = document.querySelector(`[data-coord='${coord}']`);
   if (cell) {
     const horseImg = document.createElement('img');
-    horseImg.src = '/images/horse.png';
+    horseImg.src = '/images/horse.png'; 
     horseImg.classList.add('horse-icon');
-    
     cell.appendChild(horseImg);
+    return horseImg; 
   }
+  return null;
+}
+
+function coordToChessNotation(coord) {
+  const [row, col] = coord.split(',').map(Number);
+  const file = String.fromCharCode('a'.charCodeAt(0) + col); // 'a' to 'h'
+  const rank = 7 - row + 1; // Convert from 0-7 to 8-1
+  return `${file}${rank}`;
 }
 placeHorse("4,3");
