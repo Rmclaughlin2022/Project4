@@ -41,3 +41,4 @@ const boardSize = 8;
       board.appendChild(cell);
     }
   }
+  
