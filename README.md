@@ -6,8 +6,8 @@ A visual pathfinding project built in Python that demonstrates how a knight move
 
 ## 📸 Screenshots
 
-<img src="screenshots/knight_path.png" alt="Knight Travails Visualization" width="600"/>
-
+<img src="screenshots/start.png" alt="Knight Travails Visualization" width="600"/>
+<img src="screenshots/end.png" alt="Knight Travails Visualization" width="600"/>
 
 ## ⚙️ Technologies Used
 
