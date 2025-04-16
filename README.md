@@ -57,6 +57,6 @@ A visual pathfinding project built in Python that demonstrates how a knight move
 ---
 
 ## 🔗 Live Demo
-
+https://rmclaughlin2022.github.io/Project4/
 
 ---
