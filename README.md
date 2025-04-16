@@ -5,12 +5,12 @@ A visual pathfinding project built in Python that demonstrates how a knight move
 ---
 
 ## 📸 Screenshots
-![Start Position](screenshots/Start.png)
+![Start Position](/images/screenshots/Start.png)
 
 
 ## 📸 End Position
 
-![End Position](screenshots/end.png)
+![End Position](/images/screenshots/end.png)
 ## ⚙️ Technologies Used
 
 - **Html**
