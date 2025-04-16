@@ -5,10 +5,12 @@ A visual pathfinding project built in Python that demonstrates how a knight move
 ---
 
 ## 📸 Screenshots
+![Start Position](screenshots/Start.png)
 
-<img src="screenshots/Start.png" alt="Knight Travails Visualization" width="600"/>
-<img src="screenshots/end.png" alt="Knight Travails Visualization" width="600"/>
 
+## 📸 End Position
+
+![End Position](screenshots/end.png)
 ## ⚙️ Technologies Used
 
 - **Html**
@@ -39,8 +41,6 @@ A visual pathfinding project built in Python that demonstrates how a knight move
 1. **Clone the repository**  
    ```bash
    git clone https://github.com/Rmclaughlin2022/Project4.git
-   cd knight-travails
-   ```
 
 ## 🌱 Future Improvements
 
