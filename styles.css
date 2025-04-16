@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background-image: url('/images/Funny\ knight.avif');
+  background-image: url('images/Funny\ knight.avif');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
