@@ -129,7 +129,7 @@ function placeHorse(coord) {
   const cell = document.querySelector(`[data-coord='${coord}']`);
   if (cell) {
     const horseImg = document.createElement('img');
-    horseImg.src = '/images/horse.png'; 
+    horseImg.src = 'images/horse.png'; 
     horseImg.classList.add('horse-icon');
     cell.appendChild(horseImg);
     return horseImg; 
