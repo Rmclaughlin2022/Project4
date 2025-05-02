@@ -82,6 +82,6 @@ For Knights Travails there is visual pathfinding project built in javascript tha
 ---
 
 ## 🔗 Live Demo
-https://rmclaughlin2022.github.io/Project4/
+[https://rmclaughlin2022.github.io/Project4/](https://rmclaughlin2022.github.io/Portfolio-Project-Was-project4-/)
 
 ---
