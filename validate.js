@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email");
     const phoneNumber = document.getElementById("phone-number");
     const nameFields = document.querySelectorAll("input[type='text']");
-    const submitButton = document.querySelector("button");
     
     function validateEmail() {
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -32,17 +31,19 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
     email.addEventListener("input", validateEmail);
     phoneNumber.addEventListener("input", validatePhoneNumber);
     nameFields.forEach(field => field.addEventListener("input", validateNameFields));
     
-    submitButton.addEventListener("click", function (event) {
+    form.addEventListener("submit", function (event) {
         validateEmail();
         validatePhoneNumber();
         validateNameFields();
         
         if (!form.checkValidity()) {
             event.preventDefault();
+            form.reportValidity(); // shows validation popup
         }
     });
 });
