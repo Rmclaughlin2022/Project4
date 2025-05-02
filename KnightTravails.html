@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knight Travails</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+
+<div class="top-nav">
+  <a href="index.html">🏰 Back to Game Menu</a>
+  <div class="nav-buttons">
+    <a href="signIn.html" class="signup-button">Sign Up</a>
+    <a href="https://accounts.google.com/signin" target="_blank" class="login-button">Login</a>
+  </div>
+</div>
+
+<body>
+  <h1>
+    <b>Knights Travails</b>
+    </h1>
+  <div class="chessboardmover">
+    <div class="chessboardoutside">
+
+
+      <div class="side-label" style="grid-row: 2; grid-column: 1;">8</div>
+      <div class="side-label" style="grid-row: 3; grid-column: 1;">7</div>
+      <div class="side-label" style="grid-row: 4; grid-column: 1;">6</div>
+      <div class="side-label" style="grid-row: 5; grid-column: 1;">5</div>
+      <div class="side-label" style="grid-row: 6; grid-column: 1;">4</div>
+      <div class="side-label" style="grid-row: 7; grid-column: 1;">3</div>
+      <div class="side-label" style="grid-row: 8; grid-column: 1;">2</div>
+      <div class="side-label" style="grid-row: 9; grid-column: 1;">1</div>
+
+
+      <div class="board" id="board" style="grid-row: 2 / span 8; grid-column: 2 / span 8;"></div>
+
+      <div class="label empty" style="grid-row: 10; grid-column: 1;"></div>
+
+      <div class="bot-label" style="grid-row: 10; grid-column: 2;">a</div>
+      <div class="bot-label" style="grid-row: 10; grid-column: 3;">b</div>
+      <div class="bot-label" style="grid-row: 10; grid-column: 4;">c</div>
+      <div class="bot-label" style="grid-row: 10; grid-column: 5;">d</div>
+      <div class="bot-label" style="grid-row: 10; grid-column: 6;">e</div>
+      <div class="bot-label" style="grid-row: 10; grid-column: 7;">f</div>
+      <div class="bot-label" style="grid-row: 10; grid-column: 8;">g</div>
+      <div class="bot-label" style="grid-row: 10; grid-column: 9;">h</div>
+
+      </div>
+      <div id="move-list" class="move-list"></div>
+      <button id="restart-button">Restart</button>
+
+  </div>
+</body>
+
+
+<script src="knight.js"></script>
+
+</html>
