@@ -23,7 +23,13 @@ A visual pathfinding project built in Python that demonstrates how a knight move
 
 ## 🚀 Features Implemented
 
-### ✅ Required Features
+## Sign-In Page
+- Text fields for user input
+- Login button with validation
+- Background images and styling inspired by Norse mythology
+- Responsive layout using grids and flexbox
+
+### Knight Travails
 - Calculates shortest path between two squares on a chessboard
 - Uses a valid knight’s movement
 - Implements a Breadth-First Search algorithm
@@ -33,7 +39,7 @@ A visual pathfinding project built in Python that demonstrates how a knight move
 - Graphical user interface to visualize knight's path
 - Customizable board size
 - Step-by-step move display using Matplotlib animation
-
+- Added a Game Home to go to different Pages so I can add in more projects in the future
 ---
 
 ## 🛠️ Installation
@@ -43,7 +49,7 @@ A visual pathfinding project built in Python that demonstrates how a knight move
    git clone https://github.com/Rmclaughlin2022/Project4.git
 
 ## 🌱 Future Improvements
-
+- Making things look a little bit better and adding more projects like stockfish
 - Animate knight movement step-by-step
 - Add support for obstacles on the board
 
