@@ -1,16 +1,35 @@
-# ♞ Knight Travails
+# ♞ Portfolio Project
+A project that I can add on other games into in order to show them off. 
 
-A visual pathfinding project built in Python that demonstrates how a knight moves across a chessboard using the shortest possible path. Inspired by **The Odin Project**, this project implements a breadth-first search (BFS) algorithm and provides a GUI visualization of the knight's journey from start to target position.
+This sign-in page inspired by Norse mythology, created for "The Odin Project." It includes validation on the login button and uses carefully selected images to enhance the aesthetic.
+
+For Knights Travails there is visual pathfinding project built in javascript that demonstrates how a knight moves across a chessboard using the shortest possible path. Inspired by **The Odin Project**, this project implements a breadth-first search (BFS) algorithm and provides a GUI visualization of the knight's journey from start to target position.
 
 ---
 
 ## 📸 Screenshots
+
+## Game home 
+
+![Start Position](/images/screenshots/GameHome.png)
+
+## Sign in page
+
+![Full Project](/images/screenshots/Fullproject.png)
+
+![Validation](/images/screenshots/Validation.png)
+
+
+## Knight Travails
+
 ![Start Position](/images/screenshots/Start.png)
 
 
 ## 📸 End Position
 
 ![End Position](/images/screenshots/end.png)
+
+
 ## ⚙️ Technologies Used
 
 - **Html**
